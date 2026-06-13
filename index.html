@@ -18,18 +18,18 @@ body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hirag
 #toolbar h1 { font-size: 14px; font-weight: bold; }
 #resetBtn { padding: 4px 12px; background: #e44; color: #fff; border: none; border-radius: 3px; cursor: pointer; font-size: 12px; font-weight: bold; }
 #resetBtn:hover { background: #f33; }
-.legend { display: flex; gap: 10px; align-items: center; font-size: 12px; }
-.lb { width: 16px; height: 16px; border: 1px solid #888; display: inline-block; vertical-align: middle; border-radius: 2px; }
 
-/* 全体コンテナの改良 */
+/* 全体コンテナの改良（はみ出た場合に横スクロールを許可） */
 #scroll { 
   overflow-x: auto; 
+  -webkit-overflow-scrolling: touch; /* スマホでのスクロールを滑らかに */
   background: #ddd; 
   padding: 5px;
   width: 100%;
 }
 .map-container {
-  width: 1020px;
+  width: 1020px; /* マップの基準幅を固定 */
+  min-width: 1020px;
   background: #fff;
   border: 1px solid #999;
   padding: 15px;
@@ -37,20 +37,10 @@ body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hirag
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* 画面幅が1040px以下（スマホやズームアウト時）のレスポンシブ対応 */
+/* スマホ・タブレット等のレスポンシブ対応（無理な縮小を廃止し、スクロールで確実に見せる） */
 @media screen and (max-width: 1040px) {
-  #scroll {
-    overflow-x: hidden; /* 横スクロールを消す */
-  }
   .map-container {
-    /* 画面幅に応じて全体を綺麗に縮小表示させる（CSSアスペクト比の維持） */
-    transform: scale(calc(window.innerWidth / 1040)); 
-    /* 代替案として、GridやFlexの自動縮小を効かせるため、一旦幅を100%に */
-    width: 100%;
-    min-width: 1020px;
-    transform: scale(calc((100vw - 20px) / 1020));
-    transform-origin: top left;
-    margin: 0;
+    margin: 0; /* 画面端スタートにしてスクロールしやすくする */
   }
 }
 
@@ -127,7 +117,7 @@ body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hirag
 }
 .m:hover, .grid-cell:hover, .h-row-cell:hover { filter: brightness(0.9); }
 
-/* 色変化のスタイル定義（全共通要素に適用できるように拡張） */
+/* 色変化のスタイル定義 */
 .red    { background: #f44 !important; color: #fff !important; }
 .yellow { background: #ff0 !important; color: #333 !important; }
 .blue   { background: #44f !important; color: #fff !important; }
@@ -139,6 +129,7 @@ body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hirag
 <body>
 
 <div id="toolbar">
+  <h1>マルハンメガシティ静岡 状況マップ</h1>
   <button id="resetBtn">全リセット</button>
 </div>
 
@@ -407,7 +398,6 @@ body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hirag
   </div>
 </div>
 
-<!-- Firebase連携スクリプト -->
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
   import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
@@ -450,6 +440,7 @@ body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hirag
 
       if (machine.classList.contains('red')) states[id] = 'red';
       else if (machine.classList.contains('yellow')) states[id] = 'yellow';
+      else if (machine.classList.contains('blue')) states[id] = 'blue';
     });
     
     set(mapRef, states);
