@@ -124,8 +124,6 @@ body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hirag
 
 <div id="scroll">
   <div class="map-container">
-    <div class="map-title">マルハンメガシティ静岡　2/25時点　島図　by くまたん</div>
-
     <div class="top-row">
       <div class="gbox">
         <span class="gbox-label"></span>
@@ -390,7 +388,47 @@ body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hirag
 </div>
 
 <script>
-// 色分け変更用の簡易サンプルスクリプト
+// ページが読み込まれた時に、保存されている状態を復元する
+window.addEventListener('DOMContentLoaded', () => {
+  const savedState = localStorage.getItem('maruhan_map_state');
+  
+  if (savedState) {
+    const states = JSON.parse(savedState); // 文字列からオブジェクト（連想配列）に戻す
+    
+    // 保存されているデータをもとに、各台に色クラスを付け直す
+    document.querySelectorAll('.m').forEach(machine => {
+      const id = machine.getAttribute('data-id');
+      if (states[id]) {
+        machine.classList.add(states[id]); // 'red', 'yellow', 'blue' などを付与
+      }
+    });
+  }
+});
+
+// 現在のすべての台の状態をローカルストレージに保存する関数
+function saveCurrentState() {
+  const states = {};
+  
+  // 画面上のすべての台をチェック
+  document.querySelectorAll('.m').forEach(machine => {
+    const id = machine.getAttribute('data-id');
+    
+    // ついているクラスに応じて状態を記録
+    if (machine.classList.contains('red')) {
+      states[id] = 'red';
+    } else if (machine.classList.contains('yellow')) {
+      states[id] = 'yellow';
+    } else if (machine.classList.contains('blue')) {
+      states[id] = 'blue';
+    }
+    // 色がついていない（空き台）なら保存しない（データ軽量化のため）
+  });
+  
+  // オブジェクトを文字列に変換して「maruhan_map_state」という名前で保存
+  localStorage.setItem('maruhan_map_state', JSON.stringify(states));
+}
+
+// 台をクリックした時の処理（色変更 ＋ 保存）
 document.querySelectorAll('.m').forEach(machine => {
   machine.addEventListener('click', () => {
     if (machine.classList.contains('red')) {
@@ -404,14 +442,25 @@ document.querySelectorAll('.m').forEach(machine => {
     } else {
       machine.classList.add('red');
     }
+    
+    // 💡 色が変わったタイミングで保存を実行！
+    saveCurrentState();
   });
 });
 
+// 「全リセット」ボタンを押した時の処理（色消去 ＋ ストレージクリア）
 document.getElementById('resetBtn').addEventListener('click', () => {
-  document.querySelectorAll('.m').forEach(machine => {
-    machine.classList.remove('red', 'yellow', 'blue');
-  });
+  if (confirm('すべての台の状況をクリアしますか？')) {
+    // 画面上の色を消す
+    document.querySelectorAll('.m').forEach(machine => {
+      machine.classList.remove('red', 'yellow', 'blue');
+    });
+    
+    // 💡 ローカルストレージのデータも削除！
+    localStorage.removeItem('maruhan_map_state');
+  }
 });
+
 </script>
 
 </body>
