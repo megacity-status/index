@@ -21,15 +21,39 @@ body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hirag
 .legend { display: flex; gap: 10px; align-items: center; font-size: 12px; }
 .lb { width: 16px; height: 16px; border: 1px solid #888; display: inline-block; vertical-align: middle; border-radius: 2px; }
 
-/* 全体コンテナ */
-#scroll { overflow-x: auto; background: #ddd; padding: 5px; }
+/* 全体コンテナの改良 */
+#scroll { 
+  overflow-x: auto; 
+  background: #ddd; 
+  padding: 5px;
+  width: 100%;
+}
 .map-container {
   width: 1020px;
+  max-width: 100%; /* 画面幅に合わせて縮小できるように変更 */
   background: #fff;
   border: 1px solid #999;
   padding: 15px;
   margin: 0 auto;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transform-origin: top center; /* 縮小が必要な場合の起点 */
+}
+
+/* 画面幅が1040px以下（スマホやズームアウト時）のレスポンシブ対応 */
+@media screen and (max-width: 1040px) {
+  #scroll {
+    overflow-x: hidden; /* 横スクロールを消す */
+  }
+  .map-container {
+    /* 画面幅に応じて全体を綺麗に縮小表示させる（CSSアスペクト比の維持） */
+    transform: scale(calc(window.innerWidth / 1040)); 
+    /* 代替案として、GridやFlexの自動縮小を効かせるため、一旦幅を100%に */
+    width: 100%;
+    min-width: 1020px;
+    transform: scale(calc((100vw - 20px) / 1020));
+    transform-origin: top left;
+    margin: 0;
+  }
 }
 
 /* タイトル */
@@ -397,7 +421,6 @@ body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hirag
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
   import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
-  // 提供されたFirebase設定値
   const firebaseConfig = {
     apiKey: "AIzaSyAcnvQhTLx0bOFxJzCI9BsqAoF1PuXLB5w",
     authDomain: "megacity-b2008.firebaseapp.com",
@@ -408,17 +431,12 @@ body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hirag
     appId: "1:590830759357:web:aa0b48d8ff6721d299b6d4"
   };
 
-  // Firebaseの初期化
   const app = initializeApp(firebaseConfig);
   const db = getDatabase(app);
   const mapRef = ref(db, 'maruhan_map_state');
 
-  // データ保存用に対象となる要素のセレクタを定義（通常の台ボタン、円卓、バラエティすべてに対応）
   const targetSelector = '.m, .grid-cell[data-id], .h-row-cell[data-id]';
 
-  // ==========================================
-  // 1. データベースの更新を画面に反映（受信）
-  // ==========================================
   onValue(mapRef, (snapshot) => {
     const states = snapshot.val() || {};
     
@@ -432,9 +450,6 @@ body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hirag
     });
   });
 
-  // ==========================================
-  // 2. 変更された状態をデータベースに送信（送信）
-  // ==========================================
   function saveToFirebase() {
     const states = {};
     
@@ -450,7 +465,6 @@ body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hirag
     set(mapRef, states);
   }
 
-  // クリック時の色切り替え処理
   document.querySelectorAll(targetSelector).forEach(machine => {
     machine.addEventListener('click', () => {
       if (machine.classList.contains('red')) {
@@ -469,7 +483,6 @@ body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hirag
     });
   });
 
-  // 「全リセット」処理
   document.getElementById('resetBtn').addEventListener('click', () => {
     if (confirm('【警告】全員の画面の状況がクリアされます。よろしいですか？')) {
       set(mapRef, {});
