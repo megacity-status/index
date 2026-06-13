@@ -141,14 +141,7 @@ body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hirag
 <body>
 
 <div id="toolbar">
-  <h1>マルハンメガシティ静岡 状況マップ</h1>
   <button id="resetBtn">全リセット</button>
-  <div class="legend">
-    <span class="lb" style="background:#fff;"></span>空き
-    <span class="lb" style="background:#f44;"></span>使用中
-    <span class="lb" style="background:#ff0;"></span>確保
-    <span class="lb" style="background:#44f;"></span>メモ
-  </div>
 </div>
 
 <div id="scroll">
@@ -459,7 +452,6 @@ body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hirag
 
       if (machine.classList.contains('red')) states[id] = 'red';
       else if (machine.classList.contains('yellow')) states[id] = 'yellow';
-      else if (machine.classList.contains('blue')) states[id] = 'blue';
     });
     
     set(mapRef, states);
