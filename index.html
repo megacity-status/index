@@ -388,79 +388,87 @@ body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hirag
 </div>
 
 <script>
-// ページが読み込まれた時に、保存されている状態を復元する
-window.addEventListener('DOMContentLoaded', () => {
-  const savedState = localStorage.getItem('maruhan_map_state');
-  
-  if (savedState) {
-    const states = JSON.parse(savedState); // 文字列からオブジェクト（連想配列）に戻す
-    
-    // 保存されているデータをもとに、各台に色クラスを付け直す
-    document.querySelectorAll('.m').forEach(machine => {
-      const id = machine.getAttribute('data-id');
-      if (states[id]) {
-        machine.classList.add(states[id]); // 'red', 'yellow', 'blue' などを付与
-      }
-    });
-  }
-});
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
-// 現在のすべての台の状態をローカルストレージに保存する関数
-function saveCurrentState() {
-  const states = {};
-  
-  // 画面上のすべての台をチェック
-  document.querySelectorAll('.m').forEach(machine => {
-    const id = machine.getAttribute('data-id');
-    
-    // ついているクラスに応じて状態を記録
-    if (machine.classList.contains('red')) {
-      states[id] = 'red';
-    } else if (machine.classList.contains('yellow')) {
-      states[id] = 'yellow';
-    } else if (machine.classList.contains('blue')) {
-      states[id] = 'blue';
-    }
-    // 色がついていない（空き台）なら保存しない（データ軽量化のため）
-  });
-  
-  // オブジェクトを文字列に変換して「maruhan_map_state」という名前で保存
-  localStorage.setItem('maruhan_map_state', JSON.stringify(states));
-}
+  // ⚠️【重要】ここをご自身のFirebaseの設定値に書き換えてください！
+const firebaseConfig = {
+  apiKey: "AIzaSyAcnvQhTLx0bOFxJzCI9BsqAoF1PuXLB5w",
+  authDomain: "megacity-b2008.firebaseapp.com",
+  databaseURL: "https://megacity-b2008-default-rtdb.firebaseio.com",
+  projectId: "megacity-b2008",
+  storageBucket: "megacity-b2008.firebasestorage.app",
+  messagingSenderId: "590830759357",
+  appId: "1:590830759357:web:aa0b48d8ff6721d299b6d4"
+};
+  // Firebaseの初期化
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+  const mapRef = ref(db, 'maruhan_map_state'); // データベース内の保存先
 
-// 台をクリックした時の処理（色変更 ＋ 保存）
-document.querySelectorAll('.m').forEach(machine => {
-  machine.addEventListener('click', () => {
-    if (machine.classList.contains('red')) {
-      machine.classList.remove('red');
-      machine.classList.add('yellow');
-    } else if (machine.classList.contains('yellow')) {
-      machine.classList.remove('yellow');
-      machine.classList.add('blue');
-    } else if (machine.classList.contains('blue')) {
-      machine.classList.remove('blue');
-    } else {
-      machine.classList.add('red');
-    }
+  // ==========================================
+  // 1. 他の人が更新したら、自分の画面も自動で変わる（受信）
+  // ==========================================
+  onValue(mapRef, (snapshot) => {
+    const states = snapshot.val() || {};
     
-    // 💡 色が変わったタイミングで保存を実行！
-    saveCurrentState();
-  });
-});
-
-// 「全リセット」ボタンを押した時の処理（色消去 ＋ ストレージクリア）
-document.getElementById('resetBtn').addEventListener('click', () => {
-  if (confirm('すべての台の状況をクリアしますか？')) {
-    // 画面上の色を消す
+    // 一旦、全台の色をクリア
     document.querySelectorAll('.m').forEach(machine => {
       machine.classList.remove('red', 'yellow', 'blue');
+      
+      // データベースにある色を付け直す
+      const id = machine.getAttribute('data-id');
+      if (states[id]) {
+        machine.classList.add(states[id]);
+      }
+    });
+  });
+
+  // ==========================================
+  // 2. 自分が色を変えたら、データベースに送る（送信）
+  // ==========================================
+  function saveToFirebase() {
+    const states = {};
+    
+    document.querySelectorAll('.m').forEach(machine => {
+      const id = machine.getAttribute('data-id');
+      if (machine.classList.contains('red')) states[id] = 'red';
+      else if (machine.classList.contains('yellow')) states[id] = 'yellow';
+      else if (machine.classList.contains('blue')) states[id] = 'blue';
     });
     
-    // 💡 ローカルストレージのデータも削除！
-    localStorage.removeItem('maruhan_map_state');
+    // Firebaseにデータを上書き保存（これだけで全員に同期されます）
+    set(mapRef, states);
   }
-});
 
+  // 台をクリックした時の処理
+  document.querySelectorAll('.m').forEach(machine => {
+    machine.addEventListener('click', () => {
+      if (machine.classList.contains('red')) {
+        machine.classList.remove('red');
+        machine.classList.add('yellow');
+      } else if (machine.classList.contains('yellow')) {
+        machine.classList.remove('yellow');
+        machine.classList.add('blue');
+      } else if (machine.classList.contains('blue')) {
+        machine.classList.remove('blue');
+      } else {
+        machine.classList.add('red');
+      }
+      
+      // 💡 クリックしたら即座に送信！
+      saveToFirebase();
+    });
+  });
+
+  // 「全リセット」ボタンを押した時の処理
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    if (confirm('【警告】全員の画面の状況がクリアされます。よろしいですか？')) {
+      // データベースを空っぽにする（全員の画面から色が消えます）
+      set(mapRef, {});
+    }
+  });
 </script>
 
 </body>
