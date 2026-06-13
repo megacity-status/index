@@ -128,20 +128,20 @@ body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hirag
 
     <div class="top-row">
       <div class="gbox">
-        <span class="gbox-label">リゼロ</span>
+        <span class="gbox-label"></span>
         <div class="mrow">
           <div class="m" data-id="919">919</div><div class="m" data-id="920">920</div><div class="m" data-id="921">921</div><div class="m" data-id="922">922</div><div class="m" data-id="923">923</div><div class="m" data-id="924">924</div>
         </div>
       </div>
       <div style="display:flex; gap:10px;">
         <div class="gbox">
-          <span class="gbox-label">バーサスR</span>
+          <span class="gbox-label"></span>
           <div class="mrow">
             <div class="m" data-id="1157">1157</div><div class="m" data-id="1158">1158</div><div class="m" data-id="1159">1159</div><div class="m" data-id="1160">1160</div>
           </div>
         </div>
         <div class="gbox">
-          <span class="gbox-label">新ハナビ</span>
+          <span class="gbox-label"></span>
           <div class="mrow">
             <div class="m" data-id="1161">1161</div><div class="m" data-id="1162">1162</div>
           </div>
@@ -153,37 +153,37 @@ body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hirag
       
       <div class="side-column">
         <div class="side-block">
-          <div class="label-v">頭文字D</div>
+          <div class="label-v"></div>
           <div class="side-m-list"><div class="m" data-id="918">918</div></div>
         </div>
         <div class="side-block">
-          <div class="label-v">絶対衝撃</div>
+          <div class="label-v"></div>
           <div class="side-m-list"><div class="m" data-id="917">917</div><div class="m" data-id="916">916</div><div class="m" data-id="915">915</div></div>
         </div>
         <div class="side-block">
-          <div class="label-v">はーです</div>
+          <div class="label-v"></div>
           <div class="side-m-list"><div class="m" data-id="914">914</div><div class="m" data-id="913">913</div><div class="m" data-id="912">912</div></div>
         </div>
         <div class="side-block">
-          <div class="label-v">シンフォ</div>
+          <div class="label-v"></div>
           <div class="side-m-list"><div class="m" data-id="911">911</div><div class="m" data-id="910">910</div><div class="m" data-id="909">909</div></div>
         </div>
         <div class="side-block">
-          <div class="label-v">叛逆</div>
+          <div class="label-v"></div>
           <div class="side-m-list"><div class="m" data-id="908">908</div><div class="m" data-id="907">907</div><div class="m" data-id="906">906</div></div>
         </div>
         <div class="side-block">
-          <div class="label-v">鉄拳デビ</div>
+          <div class="label-v"></div>
           <div class="side-m-list"><div class="m" data-id="905">905</div><div class="m" data-id="904">904</div><div class="m" data-id="903">903</div></div>
         </div>
         <div class="side-block">
-          <div class="label-v">チバリヨ</div>
+          <div class="label-v"></div>
           <div class="side-m-list">
             <div class="m" data-id="902">902</div><div class="m" data-id="901">901</div><div class="m" data-id="900">900</div><div class="m" data-id="899">899</div><div class="m" data-id="898">898</div><div class="m" data-id="897">897</div><div class="m" data-id="896">896</div>
           </div>
         </div>
         <div class="side-block">
-          <div class="label-v">沖ドキD</div>
+          <div class="label-v"></div>
           <div class="side-m-list">
             <div class="m" data-id="895">895</div><div class="m" data-id="894">894</div><div class="m" data-id="893">893</div><div class="m" data-id="892">892</div><div class="m" data-id="891">891</div><div class="m" data-id="890">890</div><div class="m" data-id="889">889</div><div class="m" data-id="888">888</div><div class="m" data-id="887">887</div><div class="m" data-id="886">886</div><div class="m" data-id="885">885</div><div class="m" data-id="884">884</div><div class="m" data-id="883">883</div>
           </div>
@@ -192,8 +192,227 @@ body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hirag
 
       <div class="center-layout">
         <div class="center-row">
-          <div class="gbox"><span class="gbox-label">GOE サラ番2 タブー 吉宗3</span><div class="mrow"><div class="m" data-id="940">940</div><div class="m" data-id="939">939</div><div class="m" data-id="938">938</div><div class="m" data-id="937">937</div><div class="m" data-id="936">936</div><div class="m" data-id="935">935</div><div class="m" data-id="934">934</div><div class="m" data-id="933">933</div></div></div>
-          <div class="gbox"><span class="gbox-label">天昇 秘宝伝 ガルパンG モンハン</span><div class="mrow"><div class="m" data-id="932">932</div><div class="m" data-id="931">931</div><div class="m" data-id="930">930</div><div class="m" data-id="929">929</div><div class="m" data-id="928">928</div><div class="m" data-id="927">927</div><div class="m" data-id="926">926</div><div class="m" data-id="925">925</div></div></div>
+          <div class="gbox"><span class="gbox-label"></span><div class="mrow"><div class="m" data-id="940">940</div><div class="m" data-id="939">939</div><div class="m" data-id="938">938</div><div class="m" data-id="937">937</div><div class="m" data-id="936">936</div><div class="m" data-id="935">935</div><div class="m" data-id="934">934</div><div class="m" data-id="933">933</div></div></div>
+          <div class="gbox"><span class="gbox-label"></span><div class="mrow"><div class="m" data-id="932">932</div><div class="m" data-id="931">931</div><div class="m" data-id="930">930</div><div class="m" data-id="929">929</div><div class="m" data-id="928">928</div><div class="m" data-id="927">927</div><div class="m" data-id="926">926</div><div class="m" data-id="925">925</div></div></div>
         </div>
         <div class="center-row">
-          <div class="gbox"><span class="gbox-label">GANTZ姫 シンデレラ4 楽園追放</span><div class="mrow"><div c
+          <div class="gbox"><span class="gbox-label"></span><div class="mrow"><div class="m" data-id="941">941</div><div class="m" data-id="942">942</div><div class="m" data-id= "943">943</div><div class="m" data-id="944">944</div><div class="m" data-id="945">945</div><div class="m" data-id="946">946</div><div class="m" data-id="947">947</div><div class="m" data-id="948">948</div></div></div>
+          <div class="gbox"><span class="gbox-label"></span><div class="mrow"><div class="m" data-id="949">949</div><div class="m" data-id="950">950</div><div class="m" data-id="951">951</div><div class="m" data-id="952">952</div><div class="m" data-id="953">953</div><div class="m" data-id="954">954</div><div class="m" data-id="955">955</div><div class="m" data-id="956">956</div></div></div>
+        </div>
+        <div class="center-row">
+          <div class="gbox"><span class="gbox-label"></span><div class="mrow"><div class="m" data-id="972">972</div><div class="m" data-id="971">971</div><div class="m" data-id="970">970</div><div class="m" data-id="969">969</div><div class="m" data-id="968">968</div><div class="m" data-id="967">967</div><div class="m" data-id="966">966</div><div class="m" data-id="965">965</div></div></div>
+          <div class="gbox"><span class="gbox-label"></span><div class="mrow"><div class="m" data-id="964">964</div><div class="m" data-id="963">963</div><div class="m" data-id="962">962</div><div class="m" data-id="961">961</div><div class="m" data-id="960">960</div><div class="m" data-id="959">959</div><div class="m" data-id="958">958</div><div class="m" data-id="957">957</div></div></div>
+        </div>
+        <div class="center-row">
+          <div class="gbox"><span class="gbox-label"></span><div class="mrow"><div class="m" data-id="973">973</div><div class="m" data-id="974">974</div><div class="m" data-id="975">975</div><div class="m" data-id="976">976</div><div class="m" data-id="977">977</div><div class="m" data-id="978">978</div><div class="m" data-id="979">979</div><div class="m" data-id="980">980</div><div class="m" data-id="981">981</div><div class="m" data-id="982">982</div></div></div>
+          <div class="gbox"><span class="gbox-label"></span><div class="mrow"><div class="m" data-id="983">983</div><div class="m" data-id="984">984</div><div class="m" data-id="985">985</div><div class="m" data-id="986">986</div><div class="m" data-id="987">987</div><div class="m" data-id="988">988</div><div class="m" data-id="989">989</div><div class="m" data-id="990">990</div><div class="m" data-id="991">991</div><div class="m" data-id="992">992</div></div></div>
+        </div>
+
+        <div class="center-combine">
+          <div class="gbox"><span class="gbox-label"></span><div class="mrow"><div class="m" data-id="1024">1024</div><div class="m" data-id="1023">1023</div><div class="m" data-id="1022">1022</div><div class="m" data-id="1021">1021</div><div class="m" data-id="1020">1020</div><div class="m" data-id="1019">1019</div><div class="m" data-id="1018">1018</div><div class="m" data-id="1017">1017</div></div></div>
+          <div class="v-island-group">
+            <div class="gbox"><span class="gbox-label"></span><div class="m" data-id="1016">1016</div><div class="m" data-id="1015">1015</div><div class="m" data-id="1014">1014</div><div class="m" data-id="1013">1013</div></div>
+            <div class="gbox"><span class="gbox-label"></span><div class="m" data-id="1012">1012</div><div class="m" data-id="1011">1011</div><div class="m" data-id="1010">1010</div><div class="m" data-id="1009">1009</div></div>
+            <div class="gbox"><span class="gbox-label"></span><div class="m" data-id="1001">1001</div><div class="m" data-id="1002">1002</div><div class="m" data-id="1003">1003</div><div class="m" data-id="1004">1004</div><div class="m" data-id="1005">1005</div><div class="m" data-id="1006">1006</div><div class="m" data-id="1007">1007</div><div class="m" data-id="1008">1008</div></div>
+          </div>
+          <div class="gbox"><span class="gbox-label"></span><div class="mrow"><div class="m" data-id="1000">1000</div><div class="m" data-id="999">999</div><div class="m" data-id="998">998</div><div class="m" data-id="997">997</div><div class="m" data-id="996">996</div><div class="m" data-id="995">995</div><div class="m" data-id="994">994</div><div class="m" data-id="993">993</div></div></div>
+        </div>
+
+        <div class="center-row">
+          <div class="gbox"><span class="gbox-label"></span><div class="mrow"><div class="m" data-id="1025">1025</div><div class="m" data-id="1026">1026</div><div class="m" data-id="1027">1027</div><div class="m" data-id="1028">1028</div><div class="m" data-id="1029">1029</div><div class="m" data-id="1030">1030</div><div class="m" data-id="1031">1031</div><div class="m" data-id="1032">1032</div></div></div>
+          <div class="gbox"><span class="gbox-label"></span><div class="mrow"><div class="m" data-id="1033">1033</div><div class="m" data-id="1034">1034</div><div class="m" data-id="1035">1035</div><div class="m" data-id="1036">1036</div><div class="m" data-id="1037">1037</div><div class="m" data-id="1038">1038</div><div class="m" data-id="1039">1039</div><div class="m" data-id="1040">1040</div></div></div>
+        </div>
+
+        <div class="center-aisle">中央通路</div>
+
+        <div class="center-combine">
+          <div class="gbox"><span class="gbox-label"></span><div class="mrow"><div class="m" data-id="1072">1072</div><div class="m" data-id="1071">1071</div><div class="m" data-id="1070">1070</div><div class="m" data-id="1069">1069</div><div class="m" data-id="1068">1068</div><div class="m" data-id="1067">1067</div><div class="m" data-id="1066">1066</div><div class="m" data-id="1065">1065</div></div></div>
+          <div class="v-island-group">
+            <div class="gbox"><span class="gbox-label"></span><div class="m" data-id="1064">1064</div><div class="m" data-id="1063">1063</div><div class="m" data-id="1062">1062</div><div class="m" data-id="1061">1061</div><div class="m" data-id="1060">1060</div><div class="m" data-id="1059">1059</div><div class="m" data-id="1058">1058</div><div class="m" data-id="1057">1057</div></div>
+            <div class="gbox"><span class="gbox-label"></span><div class="m" data-id="1049">1049</div><div class="m" data-id="1050">1050</div><div class="m" data-id="1051">1051</div><div class="m" data-id="1052">1052</div><div class="m" data-id="1053">1053</div><div class="m" data-id="1054">1054</div><div class="m" data-id="1055">1055</div><div class="m" data-id="1056">1056</div></div>
+          </div>
+          <div class="gbox"><span class="gbox-label"></span><div class="mrow"><div class="m" data-id="1048">1048</div><div class="m" data-id="1047">1047</div><div class="m" data-id="1046">1046</div><div class="m" data-id="1045">1045</div><div class="m" data-id="1044">1044</div><div class="m" data-id="1043">1043</div><div class="m" data-id="1042">1042</div><div class="m" data-id="1041">1041</div></div></div>
+        </div>
+
+        <div class="center-row">
+          <div class="gbox"><span class="gbox-label"></span><div class="mrow"><div class="m" data-id="1073">1073</div><div class="m" data-id="1074">1074</div><div class="m" data-id="1075">1075</div><div class="m" data-id="1076">1076</div><div class="m" data-id="1077">1077</div><div class="m" data-id="1078">1078</div><div class="m" data-id="1079">1079</div><div class="m" data-id="1080">1080</div></div></div>
+          <div class="gbox"><span class="gbox-label"></span><div class="mrow"><div class="m" data-id="1081">1081</div><div class="m" data-id="1082">1082</div><div class="m" data-id="1083">1083</div><div class="m" data-id="1084">1084</div><div class="m" data-id="1085">1085</div><div class="m" data-id="1086">1086</div><div class="m" data-id="1087">1087</div><div class="m" data-id="1088">1088</div></div></div>
+        </div>
+        <div class="center-row">
+          <div class="gbox"><span class="gbox-label"></span><div class="mrow"><div class="m" data-id="1108">1108</div><div class="m" data-id="1107">1107</div><div class="m" data-id="1106">1106</div><div class="m" data-id="1105">1105</div><div class="m" data-id="1104">1104</div><div class="m" data-id="1103">1103</div><div class="m" data-id="1102">1102</div><div class="m" data-id="1101">1101</div><div class="m" data-id="1100">1100</div><div class="m" data-id="1099">1099</div></div></div>
+          <div class="gbox"><span class="gbox-label"></span><div class="mrow"><div class="m" data-id="1098">1098</div><div class="m" data-id="1097">1097</div><div class="m" data-id="1096">1096</div><div class="m" data-id="1095">1095</div><div class="m" data-id="1094">1094</div><div class="m" data-id="1093">1093</div><div class="m" data-id="1092">1092</div><div class="m" data-id="1091">1091</div><div class="m" data-id="1090">1090</div><div class="m" data-id="1089">1089</div></div></div>
+        </div>
+        <div class="center-row">
+          <div class="gbox"><span class="gbox-label"></span><div class="mrow"><div class="m" data-id="1109">1109</div><div class="m" data-id="1110">1110</div><div class="m" data-id="1111">1111</div><div class="m" data-id="1112">1112</div><div class="m" data-id="1113">1113</div><div class="m" data-id="1114">1114</div><div class="m" data-id="1115">1115</div><div class="m" data-id="1116">1116</div></div></div>
+          <div class="gbox"><span class="gbox-label"></span><div class="mrow"><div class="m" data-id="1117">1117</div><div class="m" data-id="1118">1118</div><div class="m" data-id="1119">1119</div><div class="m" data-id="1120">1120</div><div class="m" data-id="1121">1121</div><div class="m" data-id="1122">1122</div><div class="m" data-id="1123">1123</div><div class="m" data-id="1124">1124</div></div></div>
+        </div>
+        <div class="center-row">
+          <div class="gbox"><span class="gbox-label"></span><div class="mrow"><div class="m" data-id="1140">1140</div><div class="m" data-id="1139">1139</div><div class="m" data-id="1138">1138</div><div class="m" data-id="1137">1137</div><div class="m" data-id="1136">1136</div><div class="m" data-id="1135">1135</div><div class="m" data-id="1134">11 34</div><div class="m" data-id="1133">1133</div></div></div>
+          <div class="gbox"><span class="gbox-label"></span><div class="mrow"><div class="m" data-id="1132">1132</div><div class="m" data-id="1131">1131</div><div class="m" data-id="1130">1130</div><div class="m" data-id="1129">1129</div><div class="m" data-id="1128">1128</div><div class="m" data-id="1127">1127</div><div class="m" data-id="1126">1126</div><div class="m" data-id="1125">1125</div></div></div>
+        </div>
+        <div class="center-row">
+          <div class="gbox"><span class="gbox-label"></span><div class="mrow"><div class="m" data-id="1141">1141</div><div class="m" data-id="1142">1142</div><div class="m" data-id="1143">1143</div><div class="m" data-id="1144">1144</div><div class="m" data-id="1145">1145</div><div class="m" data-id="1146">1146</div><div class="m" data-id="1147">1147</div><div class="m" data-id="1148">1148</div></div></div>
+          <div class="gbox">
+            <span class="gbox-label"></span>
+            <div class="mrow">
+              <div class="m" data-id="1149">1149</div><div class="m" data-id="1150">1150</div><div class="m" data-id="1151">1151</div>
+              <div style="width: 5px;"></div>
+              <div class="m" data-id="1152">1152</div><div class="m" data-id="1153">1153</div><div class="m" data-id="1154">1154</div><div class="m" data-id="1155">1155</div><div class="m" data-id="1156">1156</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="side-column">
+        <div class="side-block right">
+          <div class="side-m-list"><div class="m" data-id="1163">1163</div><div class="m" data-id="1164">1164</div></div>
+          <div class="label-v"></div>
+        </div>
+        <div class="side-block right">
+          <div class="side-m-list"><div class="m" data-id="1165">1165</div><div class="m" data-id="1166">1166</div><div class="m" data-id="1167">1167</div><div class="m" data-id="1168">1168</div></div>
+          <div class="label-v"></div>
+        </div>
+        <div class="side-block right">
+          <div class="side-m-list"><div class="m" data-id="1169">1169</div><div class="m" data-id="1170">1170</div><div class="m" data-id="1171">1171</div><div class="m" data-id="1172">1172</div></div>
+          <div class="label-v"></div>
+        </div>
+        <div class="side-block right">
+          <div class="side-m-list"><div class="m" data-id="1173">1173</div><div class="m" data-id="1174">1174</div><div class="m" data-id="1175">1175</div><div class="m" data-id="1176">1176</div><div class="m" data-id="1177">1177</div><div class="m" data-id="1178">1178</div></div>
+          <div class="label-v"></div>
+        </div>
+        <div class="side-block right">
+          <div class="side-m-list">
+            <div class="m" data-id="1179">1179</div><div class="m" data-id="1180">1180</div><div class="m" data-id="1181">1181</div><div class="m" data-id="1182">1182</div><div class="m" data-id="1183">1183</div><div class="m" data-id="1184">1184</div><div class="m" data-id="1185">1185</div><div class="m" data-id="1186">1186</div><div class="m" data-id="1187">1187</div><div class="m" data-id="1188">1188</div>
+          </div>
+          <div class="label-v"></div>
+        </div>
+        <div class="side-block right">
+          <div class="side-m-list">
+            <div class="m" data-id="1189">1189</div><div class="m" data-id="1190">1190</div><div class="m" data-id="1191">1191</div><div class="m" data-id="1192">1192</div><div class="m" data-id="1193">1193</div><div class="m" data-id="1194">1194</div><div class="m" data-id="1195">1195</div><div class="m" data-id="1196">1196</div>
+          </div>
+          <div class="label-v"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-layout">
+      
+      <div class="bottom-left">
+        <div style="display: flex; gap: 10px; align-items: flex-end;">
+          <div class="m" data-id="882">882</div><div class="m" data-id="881">881</div>
+          <span style="font-size: 9px; font-weight: bold; color: #555;"></span>
+        </div>
+        
+        <div class="round-box">
+          <div style="font-size:10px; font-weight:bold; margin-bottom:4px;">スロパラ円卓 (1229～1239)</div>
+          <div class="grid-table">
+            <div class="grid-cell"><span class="num">1229</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1235</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1230</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1236</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1231</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1237</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1232</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1238</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1233</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1239</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1234</span><span class="name"></span></div>
+            <div class="grid-cell" style="background:#eee;"></div>
+          </div>
+        </div>
+
+        <div class="h-row">
+          <div class="h-row-cell"><span class="num">1250</span><span class="name"></span></div>
+          <div class="h-row-cell"><span class="num">1249</span><span class="name"></span></div>
+          <div class="h-row-cell"><span class="num">1248</span><span class="name"></span></div>
+          <div class="h-row-cell"><span class="num">1247</span><span class="name"></span></div>
+          <div class="h-row-cell"><span class="num">1246</span><span class="name"></span></div>
+          <div class="h-row-cell"><span class="num">1245</span><span class="name"></span></div>
+          <div class="h-row-cell"><span class="num">1244</span><span class="name"></span></div>
+          <div class="h-row-cell"><span class="num">1243</span><span class="name"></span></div>
+          <div class="h-row-cell"><span class="num">1242</span><span class="name"></span></div>
+          <div class="h-row-cell"><span class="num">1241</span><span class="name"></span></div>
+          <div class="h-row-cell"><span class="num">1240</span><span class="name"></span></div>
+        </div>
+      </div>
+
+      <div class="bottom-right">
+        <div style="display: flex; gap: 5px; margin-bottom: 5px;">
+          <div class="m" data-id="1200">1200</div><div class="m" data-id="1199">1199</div><div class="m" data-id="1197">1197</div><div class="m" data-id="1198">1198</div>
+          <span style="font-size: 9px; font-weight: bold; color: #555; align-self: center; margin-left: 5px;"></span>
+        </div>
+
+        <div style="display: flex; gap: 15px;">
+          <div class="grid-4x4" style="flex: 1;">
+            <div class="grid-cell"><span class="num">1204</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1203</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1202</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1201</span><span class="name"></span></div>
+            
+            <div class="grid-cell"><span class="num">1205</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1206</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1207</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1208</span><span class="name"></span></div>
+            
+            <div class="grid-cell"><span class="num">1212</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1211</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1210</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1209</span><span class="name"></span></div>
+            
+            <div class="grid-cell"><span class="num">1213</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1214</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1215</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1216</span><span class="name"></span></div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 1px; background: #aaa; border: 1px solid #aaa; width: 85px;">
+            <div class="grid-cell"><span class="num">1217</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1218</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1219</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1220</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1221</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1222</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1223</span><span class="name"></span></div>
+            <div class="grid-cell"><span class="num">1224</span><span class="name"></span></div>
+          </div>
+        </div>
+
+        <div class="h-row" style="margin-left: auto; width: calc(100% - 100px);">
+          <div class="h-row-cell"><span class="num">1228</span><span class="name"></span></div>
+          <div class="h-row-cell"><span class="num">1227</span><span class="name"></span></div>
+          <div class="h-row-cell"><span class="num">1226</span><span class="name"></span></div>
+          <div class="h-row-cell"> <span class="num">1225</span><span class="name"></span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+// 色分け変更用の簡易サンプルスクリプト
+document.querySelectorAll('.m').forEach(machine => {
+  machine.addEventListener('click', () => {
+    if (machine.classList.contains('red')) {
+      machine.classList.remove('red');
+      machine.classList.add('yellow');
+    } else if (machine.classList.contains('yellow')) {
+      machine.classList.remove('yellow');
+      machine.classList.add('blue');
+    } else if (machine.classList.contains('blue')) {
+      machine.classList.remove('blue');
+    } else {
+      machine.classList.add('red');
+    }
+  });
+});
+
+document.getElementById('resetBtn').addEventListener('click', () => {
+  document.querySelectorAll('.m').forEach(machine => {
+    machine.classList.remove('red', 'yellow', 'blue');
+  });
+});
+</script>
+
+</body>
+</html>
