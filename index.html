@@ -417,10 +417,12 @@ body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hirag
 
   const targetSelector = '.m, .grid-cell[data-id], .h-row-cell[data-id]';
 
+  // 受信処理：データベースの状態を画面に反映
   onValue(mapRef, (snapshot) => {
     const states = snapshot.val() || {};
     
     document.querySelectorAll(targetSelector).forEach(machine => {
+      // 一旦すべての色クラスをリセット
       machine.classList.remove('red', 'yellow');
       
       const id = machine.getAttribute('data-id');
@@ -430,28 +432,31 @@ body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hirag
     });
   });
 
+  // Firebaseへの送信
   function saveToFirebase() {
     const states = {};
-    
     document.querySelectorAll(targetSelector).forEach(machine => {
       const id = machine.getAttribute('data-id');
       if (!id) return;
-
+      // redかyellowのみ保存（白はクラスを持たないため保存されない＝空き扱い）
       if (machine.classList.contains('red')) states[id] = 'red';
       else if (machine.classList.contains('yellow')) states[id] = 'yellow';
     });
-    
     set(mapRef, states);
   }
 
+  // クリック時のループ処理（白 → 赤 → 黄 → 白）
   document.querySelectorAll(targetSelector).forEach(machine => {
     machine.addEventListener('click', () => {
       if (machine.classList.contains('red')) {
+        // 赤 → 黄
         machine.classList.remove('red');
         machine.classList.add('yellow');
       } else if (machine.classList.contains('yellow')) {
+        // 黄 → 白（なし）
         machine.classList.remove('yellow');
-      else {
+      } else {
+        // 白 → 赤
         machine.classList.add('red');
       }
       
